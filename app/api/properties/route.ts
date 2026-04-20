@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { NextResponse } from 'next/server';
 import { connectToDatabase } from '../../../lib/mongodb'; 
 // (Agar path error de toh '@/lib/mongodb' use karein)
