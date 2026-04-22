@@ -229,7 +229,7 @@ export default function Enquiry() {
               </div>
             </div>
 
-            {/* Submit Button */}
+            {/* Submit Button */}';'
             <div className="pt-4">
               <button 
                 type="submit"
