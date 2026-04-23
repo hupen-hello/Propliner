@@ -158,10 +158,18 @@ const Footer = () => {
       {/* Copyright Bottom Bar */}
       <div className="bg-black py-4 border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 text-center md:text-left">
-          <p className="text-gray-500 text-xs">
-            © Copyright Propliners Realty. All Rights Reserved.
-          </p>
-        </div>
+  <p className="text-gray-500 text-xs">
+    © Copyright Propliners Realty. All Rights Reserved. Design by{" "}
+    <a 
+      href="https://www.cssfounder.com" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="text-blue-500 hover:underline"
+    >
+      Css Founder
+    </a>
+  </p>
+</div>
       </div>
     </footer>
   );
