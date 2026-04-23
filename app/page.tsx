@@ -50,13 +50,15 @@ export default function Home() {
   // DATA ARRAYS
   // ==========================================
   const clientLogos = [
-    { id: 1, name: "Homeopathy", src: "https://propliners.in/public/uploads/client/1753853325_19.webp" },
-    { id: 2, name: "Paree", src: "https://propliners.in/public/uploads/client/1753853325_19.webp" },
-    { id: 3, name: "Prakash Books", src: "https://propliners.in/public/uploads/client/1753853325_19.webp" },
-    { id: 4, name: "T-Series", src: "https://propliners.in/public/uploads/client/1753853325_19.webp" },
-    { id: 5, name: "GIIS", src: "https://propliners.in/public/uploads/client/1753853325_19.webp" },
-    { id: 6, name: "Lin Scan", src: "https://propliners.in/public/uploads/client/1753853325_19.webp" },
-    { id: 7, name: "Stellar", src: "https://propliners.in/public/uploads/client/1753853325_19.webp" },
+    { id: 1, name: "Homeopathy", src: "/1.webp" },
+    { id: 2, name: "Paree", src: "/2.webp" },
+    { id: 3, name: "Prakash Books", src: "/3.webp" },
+    { id: 4, name: "T-Series", src: "/4.webp" },
+    { id: 5, name: "GIIS", src: "/5.webp" },
+    { id: 6, name: "Lin Scan", src: "/6.webp" },
+    { id: 7, name: "Stellar", src: "/7.webp" },
+    { id: 8, name: "Stellar", src: "/8.webp" },
+    { id: 9, name: "Stellar", src: "/9.webp" },
   ];
 
   const advantages = [
@@ -85,12 +87,15 @@ export default function Home() {
     { id: 1, name: "Avantika Singh", role: "Founder & CEO", text: '"Professional, Prompt, and Highly Reliable" What sets Propliners apart is their professionalism and quick turnaround.', image: "https://propliners.in/public/uploads/testimonial/1753854765_03 (1).webp" },
     { id: 2, name: "Vijay Kumar", role: "Founder & CEO", text: '"Best Commercial Real Estate Experts in Noida" We were searching for a warehouse, and Propliners guided us with accurate insights.', image: "https://propliners.in/public/uploads/testimonial/1753854765_03 (1).webp" },
     { id: 3, name: "Niharika Mishra", role: "Founder & CEO", text: '"Transparent Deals & Excellent Market Understanding" Choosing Propliners was the best decision for our new setup.', image: "https://propliners.in/public/uploads/testimonial/1753854765_03 (1).webp" },
+    { id: 4, name: "Niharika Mishra", role: "Founder & CEO", text: '"Transparent Deals & Excellent Market Understanding" Choosing Propliners was the best decision for our new setup.', image: "https://propliners.in/public/uploads/testimonial/1753854765_03 (1).webp" },
+    { id: 5, name: "Niharika Mishra", role: "Founder & CEO", text: '"Transparent Deals & Excellent Market Understanding" Choosing Propliners was the best decision for our new setup.', image: "https://propliners.in/public/uploads/testimonial/1753854765_03 (1).webp" },
   ];
 
   const workspaces = [
-    { id: 1, city: "Noida", title: "Sector 62 IT Hub", count: 12, image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" },
-    { id: 2, city: "Gurgaon", title: "Cyber City Area", count: 8, image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" },
-    { id: 3, city: "Delhi", title: "Connaught Place", count: 5, image: "https://images.unsplash.com/photo-1416331108676-a22ccb276e35?q=80&w=800&auto=format&fit=crop" },
+    { id: 1, city: "Noida", title: "Sector 62 IT Hub", count: 12, image: "/noida.jpg" },
+    { id: 2, city: "Gurgaon", title: "Cyber City Area", count: 8, image: "/gurgaon.jpg" },
+    { id: 3, city: "Delhi", title: "Connaught Place", count: 5, image: "/new-delhi.jpg" },
+    { id: 4, city: "Greater Noida", title: "Greater Noida", count: 5, image: "/greater-noida.jpg" },
   ];
 
   // Naya Blog Data
@@ -165,13 +170,16 @@ export default function Home() {
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto drop-shadow-md">
             The Best Workspace Provider In Delhi/NCR
           </p>
+           <Link href="#enquiry-section" className="inline-block bg-[#EF4444] hover:bg-red-600 text-white px-8 py-3.5 font-bold text-sm tracking-wide transition-colors shadow-md">
+              Talk to An Expert
+            </Link>
         </div>
       </section>
 
       {/* ========================================== */}
       {/* 2. SEARCH FILTER (Overlap) */}
       {/* ========================================== */}
-      <SearchFilter />
+      {/* <SearchFilter /> */}
 
       {/* ========================================== */}
       {/* 3. ABOUT US (White Bg) */}
@@ -196,9 +204,7 @@ export default function Home() {
           </div>
           <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
             <span className="inline-block bg-red-50 text-[#EF4444] text-sm font-bold px-4 py-1.5 rounded-full mb-4">ABOUT US</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-              Propliners Realty - A 6 Sigma Following Company<span className="text-[#EF4444]">.</span>
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Propliners Realty - A 6 Sigma Following<span className="text-[#EF4444]"> Company.</span></h2>
             <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
               <strong>Propliners Realty</strong> is a prominent Consultancy firm which provides all type of Commercial & Industrial Real-estate solutions. We have a team of highly qualified and experienced professionals who have decades of experience in setting up the industry, office spaces for various corporate & FDI companies across the world.
             </p>
@@ -234,7 +240,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <span className="inline-block bg-red-50 text-[#EF4444] text-sm font-bold px-4 py-1.5 rounded-full mb-4">OUR SERVICE</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">Our Main Focus</h2>
+             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Our Main <span className="text-[#EF4444]">Focus</span></h2>
+            
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((item) => (
@@ -258,23 +265,23 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <span className="inline-block bg-red-50 text-[#EF4444] text-sm font-bold px-4 py-1.5 rounded-full mb-4">AREA PROPERTIES</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">Properties By Location</h2>
+             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Properties By <span className="text-[#EF4444]">Location</span></h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {workspaces.map((workspace) => (
               <div key={workspace.id} className="bg-white p-4 rounded-sm shadow-sm hover:shadow-lg border border-gray-100 transition-shadow duration-300 group">
                 <div className="relative w-full h-[220px] md:h-[260px] overflow-hidden mb-5">
                   <Image src={workspace.image} alt={workspace.city} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm">
+                  {/* <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm">
                     <span className="text-[11px] font-bold text-gray-600 uppercase tracking-wide">{workspace.count} Properties</span>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="px-2 pb-2">
                   <p className="text-gray-500 text-sm mb-1 font-medium">{workspace.city}</p>
                   <h3 className="text-xl font-bold text-gray-900 mb-5 leading-tight group-hover:text-[#EF4444] transition-colors">{workspace.title}</h3>
-                  <Link href={`/it-park/${workspace.city.toLowerCase()}`} className="inline-flex items-center gap-2 text-[#EF4444] text-sm font-medium hover:text-red-700 transition-colors">
+                  {/* <Link href={`/it-park/${workspace.city.toLowerCase()}`} className="inline-flex items-center gap-2 text-[#EF4444] text-sm font-medium hover:text-red-700 transition-colors">
                     View Property <FaArrowRight className="text-xs" />
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             ))}
@@ -341,7 +348,7 @@ export default function Home() {
       {/* ========================================== */}
       {/* 8. VIDEO TOUR (Gray Bg) */}
       {/* ========================================== */}
-      <section className="py-15 bg-gray-50">
+      {/* <section className="py-15 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="relative w-full h-[300px] md:h-[500px] rounded-lg overflow-hidden group cursor-pointer shadow-xl border-4 border-white">
             <Image src="https://propliners.in/assets/img/video/video.webp" alt="Office Video Tour" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -351,7 +358,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ========================================== */}
       {/* 9. TESTIMONIALS (White Bg) */}
@@ -400,9 +407,7 @@ export default function Home() {
             <span className="inline-block bg-red-50 text-[#EF4444] text-sm font-bold px-4 py-1.5 rounded-full mb-4 uppercase">
               News & Blogs
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">
-              Latest News Feeds
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">Latest News <span className="text-[#EF4444]">Feeds</span></h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -459,7 +464,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
             <span className="inline-block bg-red-50 text-[#EF4444] text-sm font-bold px-4 py-1.5 rounded-full mb-4">FAQ</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">Frequently Asked Questions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">Frequently Asked <span className="text-[#EF4444]">Questions</span></h2>
           </div>
 
           <div className="space-y-4">
@@ -516,7 +521,9 @@ export default function Home() {
       {/* ========================================== */}
       {/* 13. ENQUIRY SECTION */}
       {/* ========================================== */}
-      <Enquiry />
+      <div id="enquiry-section">
+        <Enquiry />
+      </div>
     </div>
   );
 }
