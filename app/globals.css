@@ -1,4 +1,44 @@
 @import "tailwindcss";
+/* ========================================== */
+/* 1. TAILWIND DIRECTIVES (Pehle se honge) */
+/* ========================================== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================== */
+/* 2. FONTS IMPORT */
+/* ========================================== */
+
+/* Import DM Sans from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap');
+
+/* Add Antiqua Roman (Custom Font) */
+/* Iske liye public folder ke andar fonts folder banakar file dalni hogi */
+@font-face {
+  font-family: 'Antiqua Roman';
+  src: url('/fonts/Antiqua-Roman.woff2') format('woff2'),
+       url('/fonts/Antiqua-Roman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================== */
+/* 3. APPLY FONTS TO ELEMENTS */
+/* ========================================== */
+
+@layer base {
+  /* Poori website (paragraphs, spans, buttons) ko DM Sans de diya */
+  body, p, a, span, button, input, textarea {
+    font-family: 'DM Sans', sans-serif !important;
+  }
+
+  /* Saari headings ko Antiqua Roman de diya */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Antiqua Roman', 'Book Antiqua', 'Palatino Linotype', serif !important;
+  }
+}
 
 :root {
   --background: #ffffff;
@@ -19,9 +59,6 @@
   }
 }
 
-body {
-  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
-}
 
 @keyframes marquee {
   0% {

@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body className="bg-gray-50 text-gray-900">
         
         {/* TopBar aur Navbar har page ke upar dikhenge */}
