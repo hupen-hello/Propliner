@@ -1,50 +1,21 @@
+/* ========================================== */
+/* 1. GOOGLE FONTS IMPORTS (SABSE TOP PAR) */
+/* ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* ========================================== */
+/* 2. TAILWIND IMPORT (Fonts ke baad aayega) */
+/* ========================================== */
 @import "tailwindcss";
-/* ========================================== */
-/* 1. TAILWIND DIRECTIVES (Pehle se honge) */
-/* ========================================== */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* ========================================== */
-/* 2. FONTS IMPORT */
+/* 3. NEXT.JS THEME VARIABLES */
 /* ========================================== */
-
-/* Import DM Sans from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap');
-
-/* Add Antiqua Roman (Custom Font) */
-/* Iske liye public folder ke andar fonts folder banakar file dalni hogi */
-@font-face {
-  font-family: 'Antiqua Roman';
-  src: url('/fonts/Antiqua-Roman.woff2') format('woff2'),
-       url('/fonts/Antiqua-Roman.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* ========================================== */
-/* 3. APPLY FONTS TO ELEMENTS */
-/* ========================================== */
-
-@layer base {
-  /* Poori website (paragraphs, spans, buttons) ko DM Sans de diya */
-  body, p, a, span, button, input, textarea {
-    font-family: 'DM Sans', sans-serif !important;
-  }
-
-  /* Saari headings ko Antiqua Roman de diya */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Antiqua Roman', 'Book Antiqua', 'Palatino Linotype', serif !important;
-  }
-}
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -59,21 +30,32 @@
   }
 }
 
+/* ========================================== */
+/* 4. CUSTOM FONT SETUP */
+/* ========================================== */
+@layer base {
+  body, p, a, span, button, input, textarea {
+    font-family: "Antiqua Roman", "Book Antiqua", "Palatino Linotype", serif
+  }
 
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Antiqua Roman", "Book Antiqua", "Palatino Linotype", serif
+  }
+}
+
+/* ========================================== */
+/* 5. CUSTOM ANIMATIONS & SWIPER CSS */
+/* ========================================== */
 @keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
 }
 
 .animate-marquee {
   animation: marquee 25s linear infinite;
 }
 
-/* Hover karne par slider ruk jayega (Optional but good for UX) */
+/* Hover karne par slider ruk jayega */
 .animate-marquee:hover {
   animation-play-state: paused;
 }
@@ -83,7 +65,6 @@
   bottom: 0px !important;
 }
 
-/* Purana wala bullet CSS waisa hi rahega */
 .swiper-custom-bullet {
   width: 30px;
   height: 6px;
@@ -101,5 +82,5 @@
 }
 
 .pt-20 {
-    padding-top: calc(var(--spacing) * 20) !important;
-  }
+  padding-top: calc(var(--spacing) * 20) !important;
+}

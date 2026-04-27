@@ -1,6 +1,6 @@
 "use client";
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React from "react";
+import { motion, Variants } from "framer-motion";
 import { FaLaptop, FaWifi, FaCubes, FaClock } from "react-icons/fa";
 
 function Servicesection() {
@@ -31,45 +31,71 @@ function Servicesection() {
     },
   ];
 
-  const targetRef = useRef<HTMLDivElement>(null);
+  // 1. Header ke liye simple Fade-down animation
+  const headingVariants: Variants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.6, ease: "easeOut" } 
+    },
+  };
 
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
+  // 2. Grid Container ke liye Stagger Effect (Ek ke baad ek card aane ke liye)
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15, // Har card 0.15s ke gap par aayega
+      },
+    },
+  };
 
-  // FIX 1: Values correct kar di hain. Ab ye thoda right se shuru hokar left me smooth slide hoga
-  const x = useTransform(scrollYProgress, [0, 1], ["-65%", "-1%"]);
+  // 3. Cards ke liye Fade-up animation (Niche se upar)
+  const cardVariants: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
 
   return (
     <div>
-      {/* h-[250vh] rakha hai taaki lamba scroll ho par bohot zyada lamba bhi na lage */}
-      <section ref={targetRef} className="relative h-[250vh] bg-gray-50">
-        
-        {/* FIX 2: flex-col aur justify-center lagaya hai. Isse Header aur Cards hamesha screen ke center mein ek sath rahenge */}
-        <div className="sticky top-0 flex flex-col justify-center h-screen overflow-hidden">
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
           
-          {/* --- Header --- */}
-          {/* FIX 3: absolute position hata di. Ab ye cards ke theek upar respectfully set hoga */}
-          <div className="w-full text-center mb-16 px-4">
+          {/* --- Animated Header --- */}
+          <motion.div
+            variants={headingVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }} // Scroll karne par ek baar chalega
+            className="text-center mb-16"
+          >
             <span className="inline-block bg-red-50 text-[#EF4444] text-sm font-bold px-4 py-1.5 rounded-full mb-4">
               OUR SERVICE
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
               Our Main <span className="text-[#EF4444]">Focus</span>
             </h2>
-          </div>
+          </motion.div>
 
-          {/* --- Scrolling Track --- */}
-          <motion.div 
-            style={{ x }} 
-            // Pl-[5vw] se left me thodi saans lene ki jagah (breathing room) milegi
-            className="flex gap-6 lg:gap-8 pl-[5vw] lg:pl-[10vw] w-max"
+          {/* --- Animated Normal Grid --- */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {services.map((item) => (
-              <div
+              <motion.div
                 key={item.id}
-                // Cards ki width perfect set ki hai taaki na zyada chote lagein na zyada bade (320px - 350px)
-                className="w-[85vw] md:w-[320px] lg:w-[300px] flex-shrink-0 group bg-white p-8 text-center rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_10px_30px_rgba(239,68,68,0.1)] border-b-4 border-transparent hover:border-[#EF4444] transition-all duration-500 flex flex-col"
+                variants={cardVariants} // Fade-up animation apply ki hai
+                className="group bg-white p-8 text-center rounded-xl shadow-sm hover:shadow-lg border-b-4 border-transparent hover:border-[#EF4444] transition-all duration-500 flex flex-col h-full"
               >
                 <div className="mx-auto w-24 h-24 bg-red-50 rounded-full flex items-center justify-center mb-8 relative">
                   <div className="absolute inset-0 bg-red-100/50 rounded-full scale-110 -z-10 group-hover:scale-125 transition-transform duration-500"></div>
@@ -78,10 +104,10 @@ function Servicesection() {
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   {item.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-grow">
+                <p className="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">
                   {item.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
 
