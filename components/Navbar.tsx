@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from 'next/navigation';
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,7 +13,7 @@ import {
   FaSearch 
 } from "react-icons/fa";
 
-// Asli logo import ko abhi ke liye aise rakha hai (Apna path theek kar lijiye)
+
 import logo from "@/public/logo-300.webp"; 
 
 const Navbar = () => {
@@ -75,7 +76,17 @@ const Navbar = () => {
       ]
     },
     { name: "Calculator", href: "/Calculator" },
+
+    
   ];
+  const pathname = usePathname();
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+  if (pathname?.startsWith("/superlogin")) {
+    return null;
+  }
+
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">

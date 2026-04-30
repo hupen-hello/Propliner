@@ -51,7 +51,7 @@ function Herosection() {
       {/* ========================================== */}
       {/* 1. HERO SECTION (Dark/Image Base) */}
       {/* ========================================== */}
-      <section className="relative w-full h-[500px] flex flex-col justify-center items-center text-center px-4 overflow-hidden">
+      <section className="relative w-full h-[400px] flex flex-col justify-center items-center text-center px-4 overflow-hidden">
         {/* Background Image Layer */}
         <div className="absolute inset-0 z-0">  
           <Image

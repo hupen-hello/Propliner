@@ -1,3 +1,6 @@
+"use client"
+
+import { usePathname } from 'next/navigation';
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -18,8 +21,15 @@ import { FaXTwitter, FaCloud } from "react-icons/fa6";
 import logo from "@/public/logo-300.webp";
 
 const Footer = () => {
+  const pathname = usePathname();
+      if (pathname?.startsWith("/admin")) {
+        return null;
+      }
+      if (pathname?.startsWith("/superlogin")) {
+    return null;
+  }
   return (
-    <footer className="relative bg-[#fff] pt-10 pb-0 text-white mt-auto z-10">
+    <footer className="relative bg-[#fff] pt-10  text-white mt-auto z-10">
       {/* Top Red Chevron (Triangle Shape) */}
       
 

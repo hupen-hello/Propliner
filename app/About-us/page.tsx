@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
 import { FaArrowRight, FaHome, FaAngleDoubleRight, FaPlay, } from "react-icons/fa";
+import Clientsection from "@/components/Clientsection";
 
 function page() {
 
@@ -59,7 +60,7 @@ function page() {
   return (
     <div>
       {/* --- INNER PAGE HERO & BREADCRUMB --- */}
-      <section className="relative w-full h-[250px] md:h-[350px] flex flex-col justify-center items-center text-center px-4 overflow-hidden mt-[70px] lg:mt-0">
+      <section className="relative w-full h-[200px] md:h-[350px] flex flex-col justify-center items-center text-center px-4 overflow-hidden mt-[10px] lg:mt-0">
         {/* Background Image Layer */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -101,7 +102,7 @@ function page() {
       </section>
 
       {/* --- SECTION 1: ABOUT US --- */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-16">
           <div className="relative w-full lg:w-1/2">
             <div className="absolute -top-4 -left-4 w-32 h-32 border-t-2 border-l-2 border-[#EF4444] z-0"></div>
@@ -187,7 +188,7 @@ function page() {
       </section>
 
       {/* --- MISSION & VISION SECTION --- */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           
           
@@ -245,53 +246,8 @@ function page() {
       </section>
 
       {/* --- SECTION 1: OUR CLIENTS  --- */}
-      <section className="py-10 bg-white overflow-hidden ">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-10">
-            Our <span className="text-[#EF4444]">Clients</span>
-          </h2>
-
-          {/* Swiper Container */}
-          <Swiper
-            modules={[Autoplay, Pagination]} 
-            spaceBetween={35} 
-            slidesPerView={2} 
-            loop={true} 
-            autoplay={{
-              delay: 2500, 
-              disableOnInteraction: false, 
-            }}
-            pagination={false} 
-            breakpoints={{
-              640: {
-                slidesPerView: 3,
-              },
-              1024: {
-                slidesPerView: 7, 
-              },
-            }}
-            className="pb-12" 
-          >
-            {clientLogos.map((client, index) => (
-              <SwiperSlide
-                // Fix: ID aur Index ko jod diya taaki kabhi duplicate na ho
-                key={`${client.id}-${index}`}
-                className="flex justify-center items-center"
-              >
-                <div className="w-44 h-24 bg-white border border-gray-100 shadow-sm rounded-lg flex items-center justify-center p-4 hover:shadow-md transition-shadow cursor-pointer mx-auto">
-                  <Image
-                    src={client.src}
-                    alt={client.name}
-                    width={120}
-                    height={60}
-                    className="object-contain max-h-full"
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </section>
+      <Clientsection/>
+      
     </div>
   );
 }

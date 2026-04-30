@@ -75,7 +75,7 @@ function Faqsection() {
     <div>
       {/* SECTION: Background image logic yahan lagayi hai */}
       <section 
-        className="relative py-20 lg:py-24 bg-gray-50 bg-cover bg-center bg-no-repeat overflow-hidden"
+        className="relative py-10 lg:py-10 bg-gray-50 bg-cover bg-center bg-no-repeat overflow-hidden"
         style={{ 
           // UPDATE THIS PATH: Apni asli background image ka path yahan dalein
           backgroundImage: "url('/faq-')" 

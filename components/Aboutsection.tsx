@@ -34,7 +34,7 @@ function Aboutsection() {
 
   return (
     <div>
-      <section className="py-20 bg-white overflow-hidden">
+      <section className="py-10 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-16">
           
           {/* ========================================== */}

@@ -21,8 +21,7 @@ import {
 } from "react-icons/fi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
+
 
 import SearchFilter from "@/components/SearchFilter";
 import Enquiry from "@/components/Enquiry";
@@ -31,6 +30,7 @@ import Aboutsection from "@/components/Aboutsection";
 import Servicesection from "@/components/Servicesection";
 import Locationsection from "@/components/Locationsection";
 import Faqsection from "@/components/Faqsection";
+import Clientsection from "@/components/Clientsection";
 
 export default function Home() {
   // State for FAQ Section
@@ -42,17 +42,7 @@ export default function Home() {
   // ==========================================
   // DATA ARRAYS
   // ==========================================
-  const clientLogos = [
-    { id: 1, name: "Homeopathy", src: "/1.webp" },
-    { id: 2, name: "Paree", src: "/2.webp" },
-    { id: 3, name: "Prakash Books", src: "/3.webp" },
-    { id: 4, name: "T-Series", src: "/4.webp" },
-    { id: 5, name: "GIIS", src: "/5.webp" },
-    { id: 6, name: "Lin Scan", src: "/6.webp" },
-    { id: 7, name: "Stellar", src: "/7.webp" },
-    { id: 8, name: "Stellar", src: "/8.webp" },
-    { id: 9, name: "Stellar", src: "/9.webp" },
-  ];
+  
 
   const advantages = [
     {
@@ -246,7 +236,7 @@ export default function Home() {
       {/* ========================================== */}
       {/* 6. ADVANTAGES (Gray Bg) */}
       {/* ========================================== */}
-      <section className="py-15 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <span className="inline-block bg-red-50 text-[#EF4444] text-sm font-bold px-4 py-1.5 rounded-full mb-4">
@@ -278,7 +268,7 @@ export default function Home() {
       {/* ========================================== */}
       {/* 7. FEATURED PROPERTIES (White Bg) */}
       {/* ========================================== */}
-      <section className="py-15 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <span className="inline-block bg-red-50 text-[#EF4444] text-sm font-bold px-4 py-1.5 rounded-full mb-4">
@@ -372,47 +362,12 @@ export default function Home() {
       {/* ========================================== */}
       {/* 12. OUR CLIENTS (Gray Bg) */}
       {/* ========================================== */}
-      <section className="py-16 bg-gray-50 overflow-hidden border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <span className="inline-block bg-red-50 text-[#EF4444] text-sm font-bold px-4 py-1.5 rounded-full mb-8">
-            OUR CLIENTS
-          </span>
-          <Swiper
-            modules={[Autoplay]}
-            spaceBetween={30}
-            slidesPerView={2}
-            loop={true}
-            autoplay={{ delay: 2500, disableOnInteraction: false }}
-            breakpoints={{
-              640: { slidesPerView: 3 },
-              1024: { slidesPerView: 6 },
-            }}
-            className="flex items-center"
-          >
-            {clientLogos.map((client, index) => (
-              <SwiperSlide
-                key={`${client.id}-${index}`}
-                className="flex justify-center items-center py-2"
-              >
-                <div className="w-36 h-20 bg-white flex items-center justify-center p-3 rounded shadow-sm border border-gray-100 hover:shadow-md transition-shadow cursor-pointer mx-auto grayscale hover:grayscale-0">
-                  <Image
-                    src={client.src}
-                    alt={client.name}
-                    width={100}
-                    height={50}
-                    className="object-contain max-h-full opacity-70 hover:opacity-100 transition-opacity"
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </section>
+      <Clientsection/>
 
       {/* ========================================== */}
       {/* 9. TESTIMONIALS (White Bg) */}
       {/* ========================================== */}
-      <section className="py-15 bg-white relative z-0">
+      <section className="py-10 bg-white relative z-0">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <h4 className="inline-block bg-red-50 text-[#EF4444] text-sm font-bold px-4 py-1.5 rounded-full mb-4">
@@ -474,7 +429,7 @@ export default function Home() {
       {/* ========================================== */}
       {/* 10. LATEST NEWS & BLOGS (Gray Bg - NAYA SECTION) */}
       {/* ========================================== */}
-      <section className="py-15 bg-gray-50">
+      <section className="py-10 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <span className="inline-block bg-red-50 text-[#EF4444] text-sm font-bold px-4 py-1.5 rounded-full mb-4 uppercase">

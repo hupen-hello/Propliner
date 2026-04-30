@@ -1,9 +1,19 @@
+"use client"
+
 // components/TopBar.tsx
 import React from 'react';
+import { usePathname } from 'next/navigation';
 import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaWhatsapp, FaLinkedinIn, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { FaXTwitter, FaCloud } from 'react-icons/fa6'; // Latest icons ke liye fa6
 
 const TopBar = () => {
+  const pathname = usePathname();
+    if (pathname?.startsWith("/admin")) {
+      return null;
+    }
+    if (pathname?.startsWith("/superlogin")) {
+    return null;
+  }
   return (
     // Background Black, Text White, chota font size (text-sm)
     <div className="bg-black text-white text-sm hidden md:block">

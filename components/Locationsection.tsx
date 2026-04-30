@@ -75,7 +75,7 @@ function Locationsection() {
   return (
     <div>
       {/* overflow-hidden add kiya hai taaki scale hote waqt koi issue na aaye */}
-      <section className="py-15 bg-white overflow-hidden">
+      <section className="py-10 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
           
           {/* --- Animated Header --- */}
