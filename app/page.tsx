@@ -315,7 +315,7 @@ export default function Home() {
                   </p>
                   <div>
                     <Link
-                      href="#"
+                      href={`/property-details/${property.slug}`}
                       className="bg-[#EF4444] hover:bg-red-600 text-white text-xs font-bold px-5 py-2.5 rounded shadow-sm inline-block transition-colors"
                     >
                       View Detail

@@ -1,17 +1,45 @@
 "use client";
 
-import React from "react";
+import React,{ useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { 
   FaMapMarkerAlt, FaWhatsapp, FaPhoneAlt, FaBuilding, 
   FaRulerCombined, FaCheckCircle, FaCar, FaWind, 
   FaLayerGroup, FaArrowRight, FaTools, FaShieldAlt, 
-  FaTree, FaDumbbell, FaCoffee, FaFireExtinguisher
+  FaTree, FaDumbbell, FaCoffee, FaFireExtinguisher,
+  FaSubway, FaBus, FaPlane, FaBriefcase, 
+  FaUtensils, FaHotel, FaShoppingBag, FaChevronDown
 } from "react-icons/fa";
 import { MdOutlineElevator, MdOutlineLocalAirport, MdOutlineSubway } from "react-icons/md";
+import { MdTrain } from "react-icons/md";
+
+
+
+
+  
+
 
 export default function PropertyDetail() {
+
+
+  // State for active tabs
+  const [activeTransport, setActiveTransport] = useState("Metro");
+  const [activeCategory, setActiveCategory] = useState("Connectivity");
+
+  // Dummy data for the dropdown card inside the map
+  const nearbyPlaces = [
+    { name: "Sector 55-56", time: "8 mins", distance: "(2.9 km)" },
+    { name: "Sector 54 Chowk", time: "18 mins", distance: "(7.9 km)" },
+  ];
+
+  const categories = [
+    { id: "Connectivity", icon: <MdTrain className="text-2xl" />, label: "Connectivity" },
+    { id: "Business", icon: <FaBriefcase className="text-2xl" />, label: "Business" },
+    { id: "Dining", icon: <FaUtensils className="text-2xl" />, label: "Dining" },
+    { id: "Hospitality", icon: <FaHotel className="text-2xl" />, label: "Hospitality" },
+    { id: "Shopping", icon: <FaShoppingBag className="text-2xl" />, label: "Shopping" },
+  ];
   // Dummy Data for At a Glance section
   const atAGlanceData = [
     { icon: <FaMapMarkerAlt />, label: "Address", value: "Plot No- A-9" },
@@ -206,6 +234,95 @@ export default function PropertyDetail() {
               </button>
             </div>
 
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mt-8">
+      
+      {/* Header */}
+      <h2 className="text-xl font-bold text-gray-900 mb-1">Neighbourhood</h2>
+      <p className="text-sm text-gray-500 mb-6">
+        Nearby business conveniences and connectivity around this building.
+      </p>
+
+      {/* ================= MAP CONTAINER ================= */}
+      <div className="relative w-full h-[400px] rounded-xl overflow-hidden border border-gray-200 mb-6 bg-gray-100">
+        
+        {/* Placeholder Map (Iframe) - Replace with real Google Maps API later */}
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112148.65584557764!2d77.30606352932971!3d28.552931481977717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc03f!2sNoida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+          className="w-full h-full border-0 grayscale-[20%]" 
+          loading="lazy"
+          title="Map Placeholder"
+        ></iframe>
+
+        {/* Floating Info Card (Bottom Left inside Map) */}
+        <div className="absolute bottom-4 left-4 right-14 sm:right-auto sm:w-[450px] bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden z-10">
+          
+          {/* Card Header */}
+          <div className="px-4 py-3 flex items-center justify-between cursor-pointer hover:bg-gray-50 transition-colors">
+            <div className="flex items-center gap-3">
+              <MdTrain className="text-blue-500 text-xl" />
+              <span className="font-semibold text-gray-800 text-sm">2 Metro around Magnum Tower</span>
+            </div>
+            <FaChevronDown className="text-gray-400 text-xs" />
+          </div>
+
+          {/* Card Body (List) */}
+          <div className="px-4 pb-4 pt-1 bg-white">
+            <div className="space-y-3">
+              {nearbyPlaces.map((place, index) => (
+                <div key={index} className="flex justify-between items-center text-sm">
+                  <span className="text-gray-700">{place.name}</span>
+                  <span className="text-gray-600">
+                    {place.time} <span className="text-gray-400">{place.distance}</span>
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ================= TRANSPORT PILLS ================= */}
+      <div className="flex flex-wrap items-center gap-3 mb-6">
+        {["Metro", "Bus", "Airport"].map((transport) => (
+          <button
+            key={transport}
+            onClick={() => setActiveTransport(transport)}
+            className={`px-6 py-1.5 rounded-full text-sm font-medium transition-colors border ${
+              activeTransport === transport
+                ? "bg-[#D32F2F] text-white border-[#D32F2F]"
+                : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
+            }`}
+          >
+            {transport}
+          </button>
+        ))}
+      </div>
+
+      {/* ================= CATEGORY TABS ================= */}
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        {categories.map((category) => {
+          const isActive = activeCategory === category.id;
+          return (
+            <button
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
+              className={`flex flex-col items-center justify-center py-4 px-2 rounded-xl border transition-all ${
+                isActive
+                  ? "border-[#D32F2F] text-[#D32F2F] bg-red-50/30"
+                  : "border-gray-200 text-gray-500 hover:border-gray-300 hover:bg-gray-50"
+              }`}
+            >
+              <div className="mb-2">{category.icon}</div>
+              <span className={`text-xs font-medium ${isActive ? "text-[#D32F2F]" : "text-gray-600"}`}>
+                {category.label}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+
+
+          </div>
           </div>
 
           {/* ================= RIGHT COLUMN (STICKY LEAD FORM) ================= */}
