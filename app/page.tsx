@@ -102,6 +102,7 @@ export default function Home() {
       id: 1,
       title: "Max Square Noida sector 129",
       plot: "Plot No C-0c Sector 129",
+      slug: "office-space-noida",
       tenants: ["NDTV", "General Atomics"],
       desc: "Max Square Noida Sector 129 is strategically located on plot no C-0c on Noida expressway.",
       image:
@@ -111,6 +112,7 @@ export default function Home() {
       id: 2,
       title: "Sovereign Capital Gate Film City...",
       plot: "Plot No-FC-57, Sector-16A",
+      slug: "office-space-noida",
       tenants: ["Microsoft", "Bose"],
       desc: "Sovereign Capital Gate Film City Noida Sector 16A 9899920199.",
       image:
@@ -120,6 +122,7 @@ export default function Home() {
       id: 3,
       title: "Max Towers Sector 16B Noida",
       plot: "C-001/A/1 Sector-16B",
+      slug: "office-space-noida",
       tenants: ["Yes Bank", "Khaitan & Co"],
       desc: "Max Towers is a commercial office space project located in Noida, India.",
       image:
