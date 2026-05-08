@@ -46,48 +46,48 @@ export default async function CityPropertyDetailPage({
     amenities: [
       {
         name: "Power Back-Up",
-        icon: <FaPowerOff className="text-gray-700 text-lg" />,
+        icon: <FaPowerOff className="text-red-500 text-lg" />,
       },
       {
         name: "Vaastu Compliant",
-        icon: <FaCompass className="text-gray-700 text-lg" />,
+        icon: <FaCompass className="text-red-500 text-lg" />,
       },
       {
         name: "Air Conditioned",
-        icon: <FaSnowflake className="text-gray-700 text-lg" />,
+        icon: <FaSnowflake className="text-red-500 text-lg" />,
       },
       {
         name: "24 X 7 Security",
-        icon: <FaShieldAlt className="text-gray-700 text-lg" />,
+        icon: <FaShieldAlt className="text-red-500 text-lg" />,
       },
       {
         name: "Rain Water Harvesting",
-        icon: <FaWater className="text-gray-700 text-lg" />,
+        icon: <FaWater className="text-red-500 text-lg" />,
       },
       {
         name: "Reserved Parking",
-        icon: <FaParking className="text-gray-700 text-lg" />,
+        icon: <FaParking className="text-red-500 text-lg" />,
       },
       {
         name: "Common Cafeteria",
-        icon: <FaCoffee className="text-gray-700 text-lg" />,
+        icon: <FaCoffee className="text-red-500 text-lg" />,
       },
       {
         name: "EV Charging",
-        icon: <FaCarBattery className="text-gray-700 text-lg" />,
+        icon: <FaCarBattery className="text-red-500 text-lg" />,
       },
       {
         name: "High Speed Lifts",
-        icon: <FaArrowsAltV className="text-gray-700 text-lg" />,
+        icon: <FaArrowsAltV className="text-red-500 text-lg" />,
       },
       {
         name: "High Speed Internet",
-        icon: <FaWifi className="text-gray-700 text-lg" />,
+        icon: <FaWifi className="text-red-500 text-lg" />,
       },
-      { name: "Retail", icon: <FaStore className="text-gray-700 text-lg" /> },
+      { name: "Retail", icon: <FaStore className="text-red-500 text-lg" /> },
       {
         name: "Co Working",
-        icon: <FaUsers className="text-gray-700 text-lg" />,
+        icon: <FaUsers className="text-red-500 text-lg" />,
       },
       {
         name: "Fire Fighting Work",
@@ -154,9 +154,9 @@ export default async function CityPropertyDetailPage({
         {/* Content & Breadcrumb Layer (z-10) */}
         <div className="relative z-10 flex flex-col items-center">
           {/* Page Title */}
-          <h1 className="text-4xl md:text-4xl font-bold text-white mb-4 tracking-wide uppercase">
+          <h2 className="text-4xl md:text-4xl font-bold text-white mb-4 tracking-wide uppercase">
             Office Space for Rent in IT Parks in {displayCityName} | Propliners
-          </h1>
+          </h2>
 
           {/* Breadcrumb Navigation */}
           <div className="flex items-center gap-2 text-[15px] font-medium">
