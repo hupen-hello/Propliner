@@ -53,9 +53,9 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { name: "IT/Corporate Parks", href: "/it-park" },
-                { name: "Office Space", href: "/Contact-Us" },
-                { name: "Co-working", href: "/Term-Condition" },
-                { name: "Industrial Property", href: "/Policy" },
+                { name: "Office Space", href: "/it-park" },
+                { name: "Co-working", href: "/it-park" },
+                { name: "Industrial Property", href: "/it-park" },
               ].map((item, idx) => (
                 <li key={idx}>
                   {/* href={item.href} lagane se exact page open hoga */}
