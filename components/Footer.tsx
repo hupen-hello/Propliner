@@ -30,15 +30,12 @@ const Footer = () => {
   }
   return (
     <footer className="relative bg-[#fff] pt-10  text-white mt-auto z-10">
-      {/* Top Red Chevron (Triangle Shape) */}
       
 
       <div className="max-w-7xl mx-auto px-4 pb-12 pt-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Column 1: Logo & About */}
           <div>
             <div className="mb-6">
-              {/* Dummy Logo setup, replace with your actual Image tag later */}
               <Image src={logo} alt="Logo" width={180} height={50} />
             </div>
             <p className="text-gray-700 text-sm leading-relaxed pr-4">
@@ -53,19 +50,21 @@ const Footer = () => {
               Quick Links
               <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#EF4444]"></span>
             </h3>
-            <ul className="space-y-3 ">
+            <ul className="space-y-3">
               {[
-                "IT/Corporate Parks",
-                "Office Space",
-                "Co-working",
-                "Industrial Property",
-              ].map((link, idx) => (
+                { name: "IT/Corporate Parks", href: "/it-park" },
+                { name: "Office Space", href: "/Contact-Us" },
+                { name: "Co-working", href: "/Term-Condition" },
+                { name: "Industrial Property", href: "/Policy" },
+              ].map((item, idx) => (
                 <li key={idx}>
+                  {/* href={item.href} lagane se exact page open hoga */}
                   <Link
-                    href="#"
+                    href={item.href}
                     className="text-gray-600 hover:text-[#EF4444] transition-colors text-sm flex items-center gap-2"
                   >
-                    <FaAngleRight className="text-[#EF4444] text-xs" /> {link}
+                    <FaAngleRight className="text-[#EF4444] text-xs" />{" "}
+                    {item.name}
                   </Link>
                 </li>
               ))}

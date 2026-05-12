@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-// Import all necessary icons for amenities
 import {
   FaPowerOff,
   FaCompass,
@@ -32,17 +31,12 @@ export default async function CityPropertyDetailPage({
   const displayCityName =
     resolvedParams.city.charAt(0).toUpperCase() + resolvedParams.city.slice(1);
 
-  // ==========================================
-  // DUMMY BACKEND DATA STRUCTURE
-  // Future me ye data aapki API se aayega
-  // ==========================================
   const pageData = {
     title: `Office Space for Rent in IT Parks ${displayCityName}`,
     description: `Looking for office space for rent in IT Parks ${displayCityName}? ${displayCityName}, popularly known as India's fastest-growing corporate hubs. With its world-class infrastructure, thriving IT ecosystem, and strategic proximity to Delhi, ${displayCityName} has become a preferred destination for startups, SMEs, and multinational corporations. Renting office space in ${displayCityName}'s IT parks gives businesses access to premium infrastructure, excellent connectivity, and a professional ecosystem that fosters growth and innovation.`,
     featuredImage:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crophttps://propliners.in/public/uploads/category/1768374848_1758524017_office space for rent IT parks in gurgaon (1).webp", // Add your real image URL here
 
-    // Amenities List (Backend se sirf names aayenge, Icons hum frontend me map karenge)
     amenities: [
       {
         name: "Power Back-Up",
@@ -95,7 +89,6 @@ export default async function CityPropertyDetailPage({
       },
     ],
 
-    // Location Filters
     locationFilters: [
       "DLF Cyber City",
       "Sector 16 Noida",
@@ -112,7 +105,6 @@ export default async function CityPropertyDetailPage({
       location: "Gurgaon",
       tenants: ["Amazon", "Microsoft", "LinkedIn"],
       description: "DLF Downtown Cyber City is a next-generation commercial project being developed by DLF Ltd.",
-      // Replace this with your actual building image
       image: "https://propliners.in/public/uploads/property/1758527629_dlf downtown block 1 cyber city gurgaon.webp" 
     },
     {
@@ -137,30 +129,23 @@ export default async function CityPropertyDetailPage({
     <main className="bg-white min-h-screen ">
       {/* --- 1. TOP SECTION: Text & Image with Breadcrumb --- */}
       <section className="relative w-full h-[250px] md:h-[350px] flex flex-col justify-center items-center text-center px-4 overflow-hidden mt-[70px] lg:mt-0">
-        {/* Background Image Layer */}
         <div className="absolute inset-0 z-0">
           <Image
-            // Dummy image - aap yahan apne server/backend ki image laga sakte hain
             src="https://propliners.in/assets/img/breadcrumb/01.webp"
             alt="About Us Background"
             fill
             className="object-cover"
             priority
           />
-          {/* Black Overlay: Iske bina text aur background mix ho jayega */}
           <div className="absolute inset-0 bg-black/75"></div>
         </div>
 
-        {/* Content & Breadcrumb Layer (z-10) */}
         <div className="relative z-10 flex flex-col items-center">
-          {/* Page Title */}
           <h2 className="text-4xl md:text-4xl font-bold text-white mb-4 tracking-wide uppercase">
             Office Space for Rent in IT Parks in {displayCityName} | Propliners
           </h2>
 
-          {/* Breadcrumb Navigation */}
           <div className="flex items-center gap-2 text-[15px] font-medium">
-            {/* Home Link */}
             <Link
               href="/"
               className="flex items-center gap-1.5 text-white hover:text-gray-300 transition-colors"
@@ -168,16 +153,12 @@ export default async function CityPropertyDetailPage({
               <FaHome className="text-lg pb-[2px]" /> Home
             </Link>
 
-            {/* Divider Icon (Double Arrow) */}
             <FaAngleDoubleRight className="text-white text-xs mt-[2px]" />
 
-            {/* Current Page (Red Color) */}
             <span className="text-[#EF4444] text-white">IT/Corporate Parks</span>
 
-            {/* Divider Icon (Double Arrow) */}
             <FaAngleDoubleRight className="text-white text-xs mt-[2px]" />
 
-            {/* Current Page (Red Color) */}
             <span className="text-[#EF4444]">{displayCityName}</span>
           </div>
         </div>
@@ -186,7 +167,6 @@ export default async function CityPropertyDetailPage({
       {/* --- 1. TOP SECTION: Text & Image --- */}
       <section className="max-w-7xl mx-auto px-4 mb-20 pt-20">
         <div className="flex flex-col lg:flex-row gap-10 items-center">
-          {/* Left Text Block */}
           <div className="w-full lg:w-1/2">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
               {pageData.title}
@@ -238,7 +218,6 @@ export default async function CityPropertyDetailPage({
           Location Filter
         </h3>
 
-        {/* Slider Container for Tags */}
         <div className="flex items-center gap-4">
           <button className="p-2 text-gray-400 hover:text-gray-800 transition-colors">
             <FaChevronLeft className="text-xl" />
@@ -287,14 +266,12 @@ export default async function CityPropertyDetailPage({
       <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         
-        {/* Section Heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Featured Projects
           </h2>
         </div>
 
-        {/* Projects Grid (1 column on mobile, 2 on tablet, 3 on desktop) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
           {projects.map((project) => (
@@ -303,7 +280,6 @@ export default async function CityPropertyDetailPage({
               className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 group flex flex-col h-full"
             >
               
-              {/* Card Image Container */}
               <div className="relative w-full h-[220px] overflow-hidden">
                 <Image 
                   src={project.image} 
@@ -313,10 +289,8 @@ export default async function CityPropertyDetailPage({
                 />
               </div>
 
-              {/* Card Content Container */}
               <div className="p-6 flex flex-col flex-grow">
                 
-                {/* Title & Location */}
                 <h3 className="text-lg font-bold text-gray-900 leading-tight">
                   {project.title}
                 </h3>
@@ -324,7 +298,6 @@ export default async function CityPropertyDetailPage({
                   {project.location}
                 </p>
 
-                {/* Tenants Row (Pill Tags) */}
                 {project.tenants && project.tenants.length > 0 && (
                   <div className="flex items-center flex-wrap gap-2 mb-4">
                     <span className="text-[11px] font-bold text-[#EF4444]">
@@ -341,12 +314,10 @@ export default async function CityPropertyDetailPage({
                   </div>
                 )}
 
-                {/* Description - line-clamp-2 ensures it doesn't break the layout if text is too long */}
                 <p className="text-[13px] text-gray-600 leading-relaxed mb-6 flex-grow line-clamp-3 text-justify">
                   {project.description}
                 </p>
 
-                {/* View Detail Button */}
                 <div className="mt-auto">
                   <Link 
                     href="#" 

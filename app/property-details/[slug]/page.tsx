@@ -330,7 +330,7 @@ export default function PropertyDetail() {
             <div className="sticky top-24 space-y-6">
               
               {/* Advisor Card */}
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              {/* <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                 <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Your Advisor</p>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-14 h-14 bg-gray-200 rounded-full overflow-hidden">
@@ -351,7 +351,7 @@ export default function PropertyDetail() {
                     <FaPhoneAlt className="text-gray-400" /> +9112345678
                   </button>
                 </div>
-              </div>
+              </div> */}
 
               {/* Lead Form */}
               <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
