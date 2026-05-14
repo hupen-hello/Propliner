@@ -1,11 +1,5 @@
 /* ========================================== */
-/* 1. GOOGLE FONTS IMPORTS (SABSE TOP PAR) */
-/* ========================================== */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
-
-/* ========================================== */
-/* 2. TAILWIND IMPORT (Fonts ke baad aayega) */
+/* 1. TAILWIND IMPORT */
 /* ========================================== */
 @import "tailwindcss";
 
@@ -14,7 +8,7 @@
 @tailwind utilities;
 
 /* ========================================== */
-/* 3. NEXT.JS THEME VARIABLES */
+/* 2. NEXT.JS THEME VARIABLES */
 /* ========================================== */
 @theme inline {
   --color-background: var(--background);
@@ -31,20 +25,7 @@
 }
 
 /* ========================================== */
-/* 4. CUSTOM FONT SETUP */
-/* ========================================== */
-@layer base {
-  body, p, a, span, button, input, textarea {
-    font-family: "Antiqua Roman", "Book Antiqua", "Palatino Linotype", serif
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: "Antiqua Roman", "Book Antiqua", "Palatino Linotype", serif
-  }
-}
-
-/* ========================================== */
-/* 5. CUSTOM ANIMATIONS & SWIPER CSS */
+/* 3. CUSTOM ANIMATIONS & SWIPER CSS */
 /* ========================================== */
 @keyframes marquee {
   0% { transform: translateX(0%); }
