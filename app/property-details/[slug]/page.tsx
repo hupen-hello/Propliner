@@ -9,7 +9,7 @@ import {
   FaLayerGroup, FaArrowRight, FaTools, FaShieldAlt, 
   FaTree, FaDumbbell, FaCoffee, FaFireExtinguisher,
   FaSubway, FaBus, FaPlane, FaBriefcase, 
-  FaUtensils, FaHotel, FaShoppingBag, FaChevronDown
+  FaUtensils, FaHotel, FaShoppingBag, FaChevronDown, FaTimes, FaChevronLeft, FaChevronRight
 } from "react-icons/fa";
 import { MdOutlineElevator, MdOutlineLocalAirport, MdOutlineSubway } from "react-icons/md";
 import { MdTrain } from "react-icons/md";
@@ -21,6 +21,41 @@ import { MdTrain } from "react-icons/md";
 
 
 export default function PropertyDetail() {
+
+  const images = [
+    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80", // Main Image
+    "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80", // Small 1
+    "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200&q=80", // Small 2
+    "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=1200&q=80", // Small 3
+    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80", // Overlay Image (Small 4)
+    // Extra images for slider when user clicks "+8 Photos"
+    "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80",
+    "https://images.unsplash.com/photo-1524230572899-a752b65a1dc8?w=1200&q=80"
+  ];
+
+  // 2. States for Lightbox
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // 3. Navigation Functions
+  const openLightbox = (index: number) => {
+    setCurrentIndex(index);
+    setIsOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsOpen(false);
+  };
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Lightbox band na ho isliye
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
 
 
   // State for active tabs
@@ -96,7 +131,7 @@ export default function PropertyDetail() {
         
         {/* ================= BREADCRUMB & HEADER ================= */}
         <div className="text-sm text-gray-500 mb-4">
-          Home | Office for Rent | Noida | Sector-136 Noida | <span className="text-gray-900 font-medium">The Grent</span>
+          Noida | Sector-136 Noida | <span className="text-gray-900 font-medium">The Grent</span>
         </div>
 
         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
@@ -138,23 +173,83 @@ export default function PropertyDetail() {
           <div className="lg:w-2/3 space-y-8">
             
             {/* Photo Gallery Grid */}
-            <div className="grid grid-cols-4 grid-rows-2 gap-2 h-[400px]">
-              {/* Main Big Image */}
-              <div className="col-span-2 row-span-2 relative rounded-l-xl overflow-hidden bg-gray-200">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Building" className="w-full h-full object-cover" />
-              </div>
-              {/* 4 Small Images */}
-              <div className="col-span-1 row-span-1 relative bg-gray-200"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80" className="w-full h-full object-cover" /></div>
-              <div className="col-span-1 row-span-1 relative rounded-tr-xl overflow-hidden bg-gray-200"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=400&q=80" className="w-full h-full object-cover" /></div>
-              <div className="col-span-1 row-span-1 relative bg-gray-200"><img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=400&q=80" className="w-full h-full object-cover" /></div>
-              {/* Plus More Overlay */}
-              <div className="col-span-1 row-span-1 relative rounded-br-xl overflow-hidden bg-gray-900 cursor-pointer">
-                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&q=80" className="w-full h-full object-cover opacity-40" />
-                <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-lg">
-                  + 8 Photos
-                </div>
-              </div>
-            </div>
+            {/* ================= NORMAL GRID VIEW ================= */}
+      <div className="grid grid-cols-4 grid-rows-2 gap-2 h-[400px]">
+        
+        {/* Main Big Image */}
+        <div 
+          onClick={() => openLightbox(0)} 
+          className="col-span-2 row-span-2 relative rounded-l-xl overflow-hidden bg-gray-200 cursor-pointer group"
+        >
+          <img src={images[0]} alt="Building" className="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+        </div>
+
+        {/* 3 Small Images */}
+        <div onClick={() => openLightbox(1)} className="col-span-1 row-span-1 relative bg-gray-200 cursor-pointer group overflow-hidden">
+          <img src={images[1]} alt="Interior" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+        </div>
+        <div onClick={() => openLightbox(2)} className="col-span-1 row-span-1 relative rounded-tr-xl overflow-hidden bg-gray-200 cursor-pointer group">
+          <img src={images[2]} alt="Interior" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+        </div>
+        <div onClick={() => openLightbox(3)} className="col-span-1 row-span-1 relative bg-gray-200 cursor-pointer group overflow-hidden">
+          <img src={images[3]} alt="Interior" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+        </div>
+
+        {/* Plus More Overlay (Clicking opens index 4) */}
+        <div onClick={() => openLightbox(4)} className="col-span-1 row-span-1 relative rounded-br-xl overflow-hidden bg-gray-900 cursor-pointer group">
+          <img src={images[4]} alt="Interior" className="w-full h-full object-cover opacity-40 group-hover:scale-110 transition duration-500" />
+          <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-lg">
+            + {images.length - 4} Photos
+          </div>
+        </div>
+
+      </div>
+
+      {/* ================= FULL SCREEN LIGHTBOX ================= */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/95 flex flex-col items-center justify-center p-4 sm:p-10"
+          onClick={closeLightbox} // Background par click karne se band ho jayega
+        >
+          {/* Close Button */}
+          <button 
+            onClick={closeLightbox} 
+            className="absolute top-6 right-6 text-white/70 hover:text-white text-3xl z-50 transition-colors"
+          >
+            <FaTimes />
+          </button>
+
+          {/* Image Counter */}
+          <div className="absolute top-6 left-6 text-white font-semibold text-sm bg-black/50 px-3 py-1 rounded-full z-50">
+            {currentIndex + 1} / {images.length}
+          </div>
+
+          {/* Left Arrow */}
+          <button 
+            onClick={prevImage}
+            className="absolute left-4 sm:left-10 text-white/50 hover:text-white text-4xl sm:text-5xl z-50 transition-all hover:scale-110 p-2"
+          >
+            <FaChevronLeft />
+          </button>
+
+          {/* Main Display Image */}
+          <div className="relative w-full max-w-5xl h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+            <img 
+              src={images[currentIndex]} 
+              alt="Gallery Preview" 
+              className="max-w-full max-h-full object-contain rounded-md shadow-2xl animate-in fade-in zoom-in-95 duration-300"
+            />
+          </div>
+
+          {/* Right Arrow */}
+          <button 
+            onClick={nextImage}
+            className="absolute right-4 sm:right-10 text-white/50 hover:text-white text-4xl sm:text-5xl z-50 transition-all hover:scale-110 p-2"
+          >
+            <FaChevronRight />
+          </button>
+        </div>
+      )}
 
             {/* About Section */}
             <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
@@ -192,6 +287,7 @@ export default function PropertyDetail() {
                     <tr className="border-b border-gray-200 text-gray-400 text-xs uppercase">
                       <th className="py-3 font-semibold">Super Area</th>
                       <th className="py-3 font-semibold">Seats</th>
+                      <th className="py-3 font-semibold">Price</th>
                       <th className="py-3 font-semibold text-right">Enquiry</th>
                     </tr>
                   </thead>
@@ -199,6 +295,7 @@ export default function PropertyDetail() {
                     <tr className="border-b border-gray-50 text-sm">
                       <td className="py-4 font-bold text-gray-800">7867 sq.ft.</td>
                       <td className="py-4 text-gray-600">78 seats</td>
+                      <td className="py-4 text-gray-600">5-10 lacs</td>
                       <td className="py-4 text-right">
                         <button className="text-red-600 font-medium hover:text-red-700 flex items-center gap-2 justify-end w-full">
                           <FaWhatsapp className="text-green-500 text-lg" /> Send WhatsApp

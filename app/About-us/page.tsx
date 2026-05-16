@@ -3,11 +3,11 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import "swiper/css";
-import "swiper/css/pagination";
+// import "swiper/css";
+// import "swiper/css/pagination";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Autoplay, Pagination } from "swiper/modules";
 
 import { FaArrowRight, FaHome, FaAngleDoubleRight, FaPlay, } from "react-icons/fa";
 import Clientsection from "@/components/Clientsection";
@@ -60,23 +60,23 @@ function page() {
   return (
     <div>
       {/* --- INNER PAGE HERO & BREADCRUMB --- */}
-      <section className="relative w-full h-[200px] md:h-[350px] flex flex-col justify-center items-center text-center px-4 overflow-hidden mt-[10px] lg:mt-0">
+      <section className="relative w-full h-[200px] md:h-[350px] flex flex-col justify-center items-start text-start  px-12 overflow-hidden mt-[10px] lg:mt-0">
         {/* Background Image Layer */}
         <div className="absolute inset-0 z-0">
           <Image
             // Dummy image - aap yahan apne server/backend ki image laga sakte hain
-            src="https://propliners.in/assets/img/breadcrumb/01.webp"
+            src="/b22.webp"
             alt="About Us Background"
             fill
             className="object-cover"
             priority
           />
           {/* Black Overlay: Iske bina text aur background mix ho jayega */}
-          <div className="absolute inset-0 bg-black/75"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
         {/* Content & Breadcrumb Layer (z-10) */}
-        <div className="relative z-10 flex flex-col items-center">
+        <div className="relative z-10 flex flex-col items-start">
           {/* Page Title */}
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-wide uppercase">
             About Us
@@ -174,7 +174,7 @@ function page() {
             </div>
 
             {/* Discover More Button */}
-            <Link
+            {/* <Link
               href="/About-us"
               className="inline-flex bg-[#EF4444] hover:bg-red-600 text-white pl-6 pr-2 py-2 rounded-full font-bold items-center gap-3 transition-transform hover:scale-105 shadow-md"
             >
@@ -182,7 +182,7 @@ function page() {
               <div className="bg-white rounded-full w-8 h-8 flex items-center justify-center shadow-sm">
                 <FaArrowRight className="text-[#EF4444] text-sm" />
               </div>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>

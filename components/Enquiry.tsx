@@ -22,7 +22,7 @@ export default function Enquiry() {
   };
 
   return (
-    <section className="relative py-20 bg-[#1A1A1A] overflow-hidden">
+    <section className="relative py-5 bg-[#1A1A1A] overflow-hidden">
   
   {/* --- 🖼️ BACKGROUND IMAGE LAYER --- */}
   <div className="absolute inset-0 z-0">

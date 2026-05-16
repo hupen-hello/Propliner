@@ -1,6 +1,8 @@
+"use client";
+
 import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -19,7 +21,7 @@ function Clientsection() {
       ];
 
   return (
-    <section className="py-10 bg-gray-50 overflow-hidden border-t border-gray-100">
+    <section className="py-5 bg-gray-50 overflow-hidden border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <span className="inline-block bg-red-50 text-[#EF4444] text-sm font-bold px-4 py-1.5 rounded-full mb-8">
             OUR CLIENTS

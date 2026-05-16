@@ -239,9 +239,9 @@ export default function Home() {
       {/* ========================================== */}
       {/* 6. ADVANTAGES (Gray Bg) */}
       {/* ========================================== */}
-      <section className="py-10 bg-gray-50">
+      <section className="py-5 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className="text-center mb-5">
             <span className="inline-block bg-red-50 text-[#EF4444] text-sm font-bold px-4 py-1.5 rounded-full mb-4">
               ADVANTAGE
             </span>
@@ -271,7 +271,7 @@ export default function Home() {
       {/* ========================================== */}
       {/* 7. FEATURED PROPERTIES (White Bg) */}
       {/* ========================================== */}
-      <section className="py-10 bg-white">
+      <section className="py-5 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <span className="inline-block bg-red-50 text-[#EF4444] text-sm font-bold px-4 py-1.5 rounded-full mb-4">
@@ -370,7 +370,7 @@ export default function Home() {
       {/* ========================================== */}
       {/* 9. TESTIMONIALS (White Bg) */}
       {/* ========================================== */}
-      <section className="py-10 bg-white relative z-0">
+      <section className="py-5 bg-white relative z-0">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <h4 className="inline-block bg-red-50 text-[#EF4444] text-sm font-bold px-4 py-1.5 rounded-full mb-4">
@@ -432,7 +432,8 @@ export default function Home() {
       {/* ========================================== */}
       {/* 10. LATEST NEWS & BLOGS (Gray Bg - NAYA SECTION) */}
       {/* ========================================== */}
-      <section className="py-10 bg-gray-50">
+      <div id="blog">
+      <section className="py-5 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <span className="inline-block bg-red-50 text-[#EF4444] text-sm font-bold px-4 py-1.5 rounded-full mb-4 uppercase">
@@ -498,6 +499,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </div>
       
     </div>
   );

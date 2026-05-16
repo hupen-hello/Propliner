@@ -75,7 +75,7 @@ function Locationsection() {
   return (
     <div>
       {/* overflow-hidden add kiya hai taaki scale hote waqt koi issue na aaye */}
-      <section className="py-10 bg-white overflow-hidden">
+      <section className="py-5 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
           
           {/* --- Animated Header --- */}
@@ -121,11 +121,11 @@ function Locationsection() {
                 </div>
                 
                 <div className="px-2 pb-2">
-                  <p className="text-gray-500 text-sm mb-1 font-medium">
-                    {workspace.city}
-                  </p>
+                  {/* <p className="text-gray-500 text-sm mb-1 font-medium">
+                    
+                  </p> */}
                   <h3 className="text-xl font-bold text-gray-900 mb-5 leading-tight group-hover:text-[#EF4444] transition-colors">
-                    {workspace.title}
+                   {workspace.city}
                   </h3>
                   {/* <Link href={`/it-park/${workspace.city.toLowerCase()}`} className="inline-flex items-center gap-2 text-[#EF4444] text-sm font-medium hover:text-red-700 transition-colors">
                     View Property <FaArrowRight className="text-xs" />

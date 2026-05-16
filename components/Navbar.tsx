@@ -75,6 +75,7 @@ const Navbar = () => {
         },
       ]
     },
+    { name: "Blog", href: "#blog" },
     { name: "Calculator", href: "/Calculator" },
 
     

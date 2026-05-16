@@ -29,10 +29,10 @@ const Footer = () => {
     return null;
   }
   return (
-    <footer className="relative bg-[#fff] pt-10  text-white mt-auto z-10">
+    <footer className="relative bg-[#fff] pt-5  text-white mt-auto z-10">
       
 
-      <div className="max-w-7xl mx-auto px-4 pb-12 pt-8">
+      <div className="max-w-7xl mx-auto px-4 pb-5 pt-5">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="mb-6">
@@ -81,6 +81,7 @@ const Footer = () => {
               {[
                 { name: "Hot Links", href: "/Hot-links" },
                 { name: "Contact Us", href: "/Contact-Us" },
+                { name: "Blog", href: "#blog" },
                 { name: "Terms Of Services", href: "/Term-Condition" },
                 { name: "Privacy Policy", href: "/Policy" },
               ].map((item, idx) => (
